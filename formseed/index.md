@@ -1,21 +1,17 @@
-# MockData — Privacy Policy
+# Formseed — Privacy Policy
 
-**Last updated: 2026-08-20 · Applies to MockData v1.x**
-
-> Note: "MockData" is the working name of this extension and may change before
-> release. This policy applies to the extension published under whichever name
-> ships; the behaviour described here does not change with the name.
+**Last updated: 2026-08-20 · Applies to Formseed v1.x**
 
 ## The short version
 
-MockData reads the form on the tab you are looking at, works out what each field
+Formseed reads the form on the tab you are looking at, works out what each field
 means, makes up realistic test data, and types it in. All of that happens inside
-your browser. Nothing about the page is sent anywhere, because MockData has
+your browser. Nothing about the page is sent anywhere, because Formseed has
 nowhere to send it: it makes no network requests at all.
 
-## What MockData collects
+## What Formseed collects
 
-**No personal data of any kind.** Specifically, MockData does not collect,
+**No personal data of any kind.** Specifically, Formseed does not collect,
 transmit, sell, share, or retain:
 
 - browsing history, URLs, or page titles
@@ -29,19 +25,19 @@ There is no account, no sign-in, and no telemetry.
 
 ## Permissions, and why each one exists
 
-MockData requests exactly three permissions and **no host permissions**.
+Formseed requests exactly three permissions and **no host permissions**.
 
 | Permission | Why it is needed |
 |---|---|
-| `activeTab` | To read and fill the form on the tab you are looking at. This is granted **only when you click the MockData toolbar button**, applies **only to that one tab**, and expires as soon as that tab navigates elsewhere. |
+| `activeTab` | To read and fill the form on the tab you are looking at. This is granted **only when you click the Formseed toolbar button**, applies **only to that one tab**, and expires as soon as that tab navigates elsewhere. |
 | `scripting` | To run the analyze-and-fill code inside that tab once `activeTab` has granted access to it. Without a host permission it cannot reach any tab you have not clicked on. |
 | `storage` | To remember your own settings: scenario, locale, record count, the two toggles, and whether you have dismissed the welcome message. |
 
-**MockData requests no host permissions and registers no content scripts.** It
+**Formseed requests no host permissions and registers no content scripts.** It
 has no standing ability to read the pages you visit — not as a policy promise,
 but as a limit of what it is installed with. Nothing runs on any page until you
 click the button. You can verify this on `chrome://extensions`: Chrome does not
-show the "read and change all your data on all websites" warning for MockData,
+show the "read and change all your data on all websites" warning for Formseed,
 because it never asks for it.
 
 ## What is stored, and where
@@ -50,14 +46,14 @@ Only your settings, in `chrome.storage.local` on your own device. That is a
 handful of preferences — which scenario you picked, which locale, how many
 records, and two on/off toggles.
 
-MockData deliberately does **not** use `chrome.storage.sync`, which Chrome would
-upload to your Google Account. Nothing MockData stores ever leaves your machine.
+Formseed deliberately does **not** use `chrome.storage.sync`, which Chrome would
+upload to your Google Account. Nothing Formseed stores ever leaves your machine.
 
 **Page content is never stored at all** — not the fields it found, not the values
 it generated, not the address of the page. Analysis results live in memory only,
 for as long as the popup is open, and are gone when you close it.
 
-## What MockData writes to the page
+## What Formseed writes to the page
 
 It fills form fields, and only form fields. It will not:
 
@@ -73,14 +69,14 @@ Anything it decides not to fill is listed in the popup with the reason.
 ## Third parties
 
 None. No analytics provider, no crash reporter, no ad network, no CDN, no
-external fonts, no remote code. MockData makes no network requests at all, and
+external fonts, no remote code. Formseed makes no network requests at all, and
 its source contains no networking code — this is enforced automatically at build
 time, so a change that introduced one would fail the build rather than ship.
 
 ## Known limitation: fields inside other sites' frames
 
 Some pages embed forms from another domain inside a frame — payment-card fields
-and some embedded form widgets work this way. **MockData cannot fill those**, and
+and some embedded form widgets work this way. **Formseed cannot fill those**, and
 equally **cannot read them**.
 
 This is a direct consequence of holding no host permissions: `activeTab` grants
@@ -103,7 +99,7 @@ today.
 
 ## Children
 
-MockData is a tool for software developers and is not directed at children. It
+Formseed is a tool for software developers and is not directed at children. It
 collects no data from anyone, of any age.
 
 ## Changes to this policy
