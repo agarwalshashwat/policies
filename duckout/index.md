@@ -1,6 +1,6 @@
 # Duckout — Privacy Policy
 
-**Last updated: 2026-08-19 · Applies to Duckout v1.x (panic-hide)**
+**Last updated: 2026-10-08 · Applies to Duckout v1.x (panic-hide)**
 
 ## The short version
 
@@ -27,7 +27,7 @@ Duckout requests exactly two permissions:
 | Permission | Why it is needed |
 |---|---|
 | `tabs` | To move a tab into a background window and move it back. Hiding a tab *is* a tab operation, so this permission is the feature. |
-| `storage` | To remember your two settings, and to remember which tabs are currently hidden so they can be restored. |
+| `storage` | To remember your settings, and to remember which tabs are currently hidden so they can be restored. |
 
 Duckout requests **no host permissions and registers no content scripts**. Under
 Chrome's extension model that means it has no ability to read or modify the
@@ -39,13 +39,15 @@ permission list shows tab and storage access and nothing about site data.
 
 Everything stays on your device, in Chrome's own extension storage:
 
-- **Your settings** (two on/off preferences: mute-while-hidden, show-decoy) are
-  kept in `chrome.storage.sync`. **Honest caveat:** if you have Chrome Sync
-  enabled, Chrome itself syncs this storage area across your signed-in Chrome
-  installations via your Google Account. That transfer is performed by Chrome, not
-  by Duckout, and it carries only those two on/off values — never URLs, titles, or
-  page content. Turn off Chrome Sync, or use `chrome.storage.local` builds, if you
-  would rather it stayed on one machine.
+- **Your settings** are kept in `chrome.storage.sync`: the on/off preferences
+  (mute-while-hidden, show-decoy, branded placeholder), plus two things only if you
+  type them in — the decoy page address, and your "Hide my sites" list. **Honest
+  caveat:** if you have Chrome Sync enabled, Chrome itself syncs this storage area
+  across your signed-in Chrome installations via your Google Account. That transfer
+  is performed by Chrome, not by Duckout, and it carries only those settings —
+  never your browsing history, the tabs you have open, page titles, or page
+  content. Turn off Chrome Sync if you would rather your settings stayed on one
+  machine.
 - **Which tabs are currently hidden** is kept in `chrome.storage.session`, which
   Chrome clears when you quit the browser. It holds tab IDs and positions so a
   hidden tab can be put back; it is never transmitted anywhere.
